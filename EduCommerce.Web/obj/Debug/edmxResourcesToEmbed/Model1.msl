@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KariyerPoliklinikDBModelStoreContainer" CdmEntityContainer="KariyerPoliklinikDBEntities">
+    <EntitySetMapping Name="Dealers">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Dealers">
+        <MappingFragment StoreEntitySet="Dealers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UpDealer" ColumnName="UpDealer" />
+          <ScalarProperty Name="DealerType" ColumnName="DealerType" />
+          <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+          <ScalarProperty Name="DealerUser" ColumnName="DealerUser" />
+          <ScalarProperty Name="DealerPass" ColumnName="DealerPass" />
+          <ScalarProperty Name="DealerAuthority" ColumnName="DealerAuthority" />
+          <ScalarProperty Name="DealerPhone" ColumnName="DealerPhone" />
+          <ScalarProperty Name="DealerFax" ColumnName="DealerFax" />
+          <ScalarProperty Name="DealerMail" ColumnName="DealerMail" />
+          <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="TaxNo" ColumnName="TaxNo" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="DealerLanguage" ColumnName="DealerLanguage" />
+          <ScalarProperty Name="VLanguage" ColumnName="VLanguage" />
+          <ScalarProperty Name="DealerLoginDate" ColumnName="DealerLoginDate" />
+          <ScalarProperty Name="DealerLoginIP" ColumnName="DealerLoginIP" />
+          <ScalarProperty Name="DealerPicture" ColumnName="DealerPicture" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="GKOD" ColumnName="GKOD" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="MailTo" ColumnName="MailTo" />
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Permissions" ColumnName="Permissions" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Educations">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Educations">
+        <MappingFragment StoreEntitySet="Educations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="University" ColumnName="University" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Permissions">
+        <MappingFragment StoreEntitySet="Permissions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Students">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="TCNumber" ColumnName="TCNumber" />
+          <ScalarProperty Name="StudentUser" ColumnName="StudentUser" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="BornDate" ColumnName="BornDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="StudentPass" ColumnName="StudentPass" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="EduStatus" ColumnName="EduStatus" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EDate" ColumnName="EDate" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="StudentLoginDate" ColumnName="StudentLoginDate" />
+          <ScalarProperty Name="StudentLoginIP" ColumnName="StudentLoginIP" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="Document" ColumnName="Document" />
+          <ScalarProperty Name="GKOD" ColumnName="GKOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Current">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Current">
+        <MappingFragment StoreEntitySet="Current">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

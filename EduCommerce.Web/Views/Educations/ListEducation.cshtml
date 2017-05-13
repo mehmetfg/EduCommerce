@@ -1,0 +1,55 @@
+﻿@model IEnumerable<EduCommerce.Web.Educations>
+
+@{
+    ViewBag.Title = "ListEducation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <h2>Eğitimler</h2>
+
+    <p>
+        <h3>@Html.ActionLink("Yeni Ekle", "Create")</h3>
+    </p>
+    <table class="table table-bordered table-striped table-condensed flip-content">
+        <tr><th>
+    Kategori
+</th>
+<th>
+    Eğitim Adı
+</th>
+<th>
+    Fiyat 
+</th>
+<th>
+   Süre
+</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+        
+                <td>
+
+                    @Html.ActionLink("Güncelle", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Detay", "DetailEducation", new { id=item.ID}) |
+                    @Html.ActionLink("Sil", "Sil", new { id=item.ID})
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

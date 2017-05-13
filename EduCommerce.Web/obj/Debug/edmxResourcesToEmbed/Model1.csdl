@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KariyerPoliklinikDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Dealers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UpDealer" Type="Int32" />
+    <Property Name="DealerType" Type="Int32" />
+    <Property Name="DealerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DealerUser" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DealerPass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DealerAuthority" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DealerPhone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DealerFax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DealerMail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DealerAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IBAN" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="BankName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="AccountName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TaxNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="DealerLanguage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="VLanguage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DealerLoginDate" Type="DateTime" Precision="0" />
+    <Property Name="DealerLoginIP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DealerPicture" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="GKOD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="WebSite" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MailTo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Domain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Logo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Permissions" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Percentage" Type="Double" />
+  </EntityType>
+  <EntityType Name="Educations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="University" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Permissions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dealer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DealerID" Type="Int32" />
+    <Property Name="StudentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TCNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StudentUser" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BornDate" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="StudentPass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EduStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="EDate" Type="DateTime" Precision="0" />
+    <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StudentLoginDate" Type="DateTime" Precision="0" />
+    <Property Name="StudentLoginIP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="FinishDate" Type="DateTime" Precision="0" />
+    <Property Name="Document" Type="Boolean" />
+    <Property Name="GKOD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Current">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="DealerID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="Type" />
+      <PropertyRef Name="CreateDate" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DealerID" Type="Int32" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="Class" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="KariyerPoliklinikDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Dealers" EntityType="Self.Dealers" />
+    <EntitySet Name="Educations" EntityType="Self.Educations" />
+    <EntitySet Name="Permissions" EntityType="Self.Permissions" />
+    <EntitySet Name="Students" EntityType="Self.Students" />
+    <EntitySet Name="Current" EntityType="Self.Current" />
+  </EntityContainer>
+</Schema>

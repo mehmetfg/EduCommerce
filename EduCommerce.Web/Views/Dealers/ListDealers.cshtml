@@ -1,0 +1,133 @@
+﻿@model IEnumerable<EduCommerce.Web.Dealers>
+
+@{
+    ViewBag.Title = "ListDealers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <h2>Bayiler</h2>
+
+    <p>
+        <h3>@Html.ActionLink("Yeni Ekle", "Create")</h3>
+    </p>
+    <table class="table table-bordered table-striped table-condensed flip-content">
+        <tr>
+            
+            <th>
+              Bayi Tipi
+            </th>
+            <th>
+                Bayi Adı
+            </th>
+           
+           
+            <th>
+                Telefon
+            </th>
+            <th>
+                Fax
+            </th>
+            <th>
+                Mail
+            </th>
+            <th>
+                Adres
+            </th>
+            <th>
+                IBAN
+            </th>
+            <th>
+              Banka Adı
+            </th>
+            <th>
+               Hesap Adı
+            </th>
+            <th>
+                Vergi Numarası
+            </th>
+            <th>
+              Ülke 
+            </th>
+            <th>
+              Şehir 
+            </th>
+            <th>
+               Dil
+            </th>
+           
+            
+           
+            <th>
+               Bayi Resim
+            </th>
+            <th>
+            Durum
+            </th>
+         
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerName)
+                </td>
+              
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerFax)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerMail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IBAN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BankName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountryID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityID)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerLoginIP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerPicture)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+              
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Detay", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

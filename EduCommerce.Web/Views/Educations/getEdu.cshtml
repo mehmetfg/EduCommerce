@@ -1,0 +1,39 @@
+﻿@model System.Data.DataTable
+
+
+<div class="portlet-body bg-red-flamingo">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>Bayiler Listesi
+        </div>
+    </div>
+    <div class="portlet-body flip-scroll">
+        <table class="col-lg-3 col-xs-6">
+            <thead class="flip-content">
+                <tr>
+                    <th class="bg-red-flamingo bg-font-red-flamingo"> Eğitim Adi </th>
+                    <th class="bg-red-flamingo bg-font-red-flamingo"> Süre </th>
+                    <th class="bg-red-flamingo bg-font-red-flamingo"> Fiyat</th>
+                    <th class="bg-red-flamingo bg-font-red-flamingo"> Üniversitei</th>
+              
+                    <th class="bg-red-flamingo bg-font-red-flamingo">Durum </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (System.Data.DataRow edu in Model.Rows)
+                {
+                    <tr>
+                        <th>@edu["Name"].ToString()</th>
+                        <th>@edu["Time"].ToString()</th>
+                        <th>@edu["Price"].ToString()</th>
+                        <th>@edu["University"].ToString()</th>
+                        <td class="form-group"> <select><option>aktif</option><option>Pasif</option></select> </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

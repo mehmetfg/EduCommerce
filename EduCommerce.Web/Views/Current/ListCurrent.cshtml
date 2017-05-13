@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EduCommerce.Web.Current>
+
+@{
+    ViewBag.Title = "ListCurrent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <h2>Satışlar</h2>
+
+    <p>
+        <h3>@Html.ActionLink("Yeni Ekle", "Create")</h3>
+    </p>
+    <table class="table table-bordered table-striped table-condensed flip-content">
+        <tr>
+            <th>
+                Bayi 
+            </th>
+            <th>
+                Öğrenci
+            </th>
+            <th>
+                Fiyat
+            </th>
+            <th>
+               Durum
+            </th>
+            <th>
+                Tarih
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Detay", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Sil", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

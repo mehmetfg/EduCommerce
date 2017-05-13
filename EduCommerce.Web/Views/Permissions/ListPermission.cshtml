@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EduCommerce.Web.Permissions>
+
+@{
+    ViewBag.Title = "ListPermission";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <h2>Yetkiler</h2>
+
+    <p>
+        <h3>@Html.ActionLink("Yeni Ekle", "Create")</h3>
+    </p>
+    <table class="table table-bordered table-striped table-condensed flip-content">
+        <tr>
+            <th>
+               Kodu
+            </th>
+            <th>
+               Adı
+            </th>
+            <th>
+              Bayi
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dealer)
+                </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Detay", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

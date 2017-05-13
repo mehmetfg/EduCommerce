@@ -1,0 +1,10 @@
+C:\Users\Üt\Desktop\Yazılım\EduCommerce\EduCommerce.Model\bin\Debug\EduCommerce.Model.dll
+C:\Users\Üt\Desktop\Yazılım\EduCommerce\EduCommerce.Model\bin\Debug\EduCommerce.Model.pdb
+C:\Users\Üt\Desktop\Yazılım\EduCommerce\EduCommerce.Model\obj\Debug\EduCommerce.Model.csprojResolveAssemblyReference.cache
+C:\Users\Üt\Desktop\Yazılım\EduCommerce\EduCommerce.Model\obj\Debug\EduCommerce.Model.dll
+C:\Users\Üt\Desktop\Yazılım\EduCommerce\EduCommerce.Model\obj\Debug\EduCommerce.Model.pdb
+C:\Users\MehmetFG\Desktop\EduCommerce\EduCommerce.Model\bin\Debug\EduCommerce.Model.dll
+C:\Users\MehmetFG\Desktop\EduCommerce\EduCommerce.Model\bin\Debug\EduCommerce.Model.pdb
+C:\Users\MehmetFG\Desktop\EduCommerce\EduCommerce.Model\obj\Debug\EduCommerce.Model.dll
+C:\Users\MehmetFG\Desktop\EduCommerce\EduCommerce.Model\obj\Debug\EduCommerce.Model.pdb
+C:\Users\MehmetFG\Desktop\EduCommerce\EduCommerce.Model\obj\Debug\EduCommerce.Model.csprojResolveAssemblyReference.cache

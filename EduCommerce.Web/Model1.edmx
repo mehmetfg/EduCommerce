@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KariyerPoliklinikDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Current">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="DealerID" />
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="CreateDate" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DealerID" Type="int" Nullable="false" />
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Class" Type="int" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dealers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UpDealer" Type="int" />
+          <Property Name="DealerType" Type="int" />
+          <Property Name="DealerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerUser" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerPass" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerAuthority" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerPhone" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerFax" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerMail" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerAddress" Type="nvarchar(max)" />
+          <Property Name="IBAN" Type="nchar" MaxLength="15" />
+          <Property Name="BankName" Type="nchar" MaxLength="30" />
+          <Property Name="AccountName" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="TaxNo" Type="nchar" MaxLength="15" />
+          <Property Name="CountryID" Type="int" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="DealerLanguage" Type="nvarchar" MaxLength="150" />
+          <Property Name="VLanguage" Type="nchar" MaxLength="10" />
+          <Property Name="DealerLoginDate" Type="smalldatetime" />
+          <Property Name="DealerLoginIP" Type="nvarchar" MaxLength="255" />
+          <Property Name="DealerPicture" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="GKOD" Type="nvarchar" MaxLength="255" />
+          <Property Name="WebSite" Type="nvarchar" MaxLength="255" />
+          <Property Name="MailTo" Type="nvarchar" MaxLength="255" />
+          <Property Name="Domain" Type="nvarchar" MaxLength="255" />
+          <Property Name="Logo" Type="nvarchar" MaxLength="255" />
+          <Property Name="Permissions" Type="nvarchar" MaxLength="255" />
+          <Property Name="Percentage" Type="float" />
+        </EntityType>
+        <EntityType Name="Educations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="University" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Permissions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dealer" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DealerID" Type="int" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="TCNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="StudentUser" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="BornDate" Type="date" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="StudentPass" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+          <Property Name="EduStatus" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="EDate" Type="smalldatetime" />
+          <Property Name="Language" Type="nvarchar" MaxLength="20" />
+          <Property Name="StudentLoginDate" Type="smalldatetime" />
+          <Property Name="StudentLoginIP" Type="nvarchar" MaxLength="255" />
+          <Property Name="StartDate" Type="smalldatetime" />
+          <Property Name="FinishDate" Type="smalldatetime" />
+          <Property Name="Document" Type="bit" />
+          <Property Name="GKOD" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="KariyerPoliklinikDBModelStoreContainer">
+          <EntitySet Name="Dealers" EntityType="Self.Dealers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Educations" EntityType="Self.Educations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permissions" EntityType="Self.Permissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Current" EntityType="Self.Current" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Current].[ID] AS [ID], 
+    [Current].[DealerID] AS [DealerID], 
+    [Current].[StudentID] AS [StudentID], 
+    [Current].[Type] AS [Type], 
+    [Current].[Class] AS [Class], 
+    [Current].[Price] AS [Price], 
+    [Current].[Quantity] AS [Quantity], 
+    [Current].[Status] AS [Status], 
+    [Current].[CreateDate] AS [CreateDate]
+    FROM [dbo].[Current] AS [Current]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KariyerPoliklinikDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dealers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UpDealer" Type="Int32" />
+          <Property Name="DealerType" Type="Int32" />
+          <Property Name="DealerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DealerUser" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DealerPass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DealerAuthority" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DealerPhone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DealerFax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DealerMail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DealerAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IBAN" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="BankName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="AccountName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TaxNo" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="CountryID" Type="Int32" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="DealerLanguage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="VLanguage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="DealerLoginDate" Type="DateTime" Precision="0" />
+          <Property Name="DealerLoginIP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DealerPicture" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="GKOD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="WebSite" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MailTo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Domain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Logo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Permissions" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Percentage" Type="Double" />
+        </EntityType>
+        <EntityType Name="Educations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="University" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Permissions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dealer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealerID" Type="Int32" />
+          <Property Name="StudentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TCNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StudentUser" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BornDate" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="StudentPass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EduStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="EDate" Type="DateTime" Precision="0" />
+          <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="StudentLoginDate" Type="DateTime" Precision="0" />
+          <Property Name="StudentLoginIP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="FinishDate" Type="DateTime" Precision="0" />
+          <Property Name="Document" Type="Boolean" />
+          <Property Name="GKOD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Current">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="DealerID" />
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="CreateDate" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealerID" Type="Int32" Nullable="false" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Class" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="KariyerPoliklinikDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dealers" EntityType="Self.Dealers" />
+          <EntitySet Name="Educations" EntityType="Self.Educations" />
+          <EntitySet Name="Permissions" EntityType="Self.Permissions" />
+          <EntitySet Name="Students" EntityType="Self.Students" />
+          <EntitySet Name="Current" EntityType="Self.Current" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KariyerPoliklinikDBModelStoreContainer" CdmEntityContainer="KariyerPoliklinikDBEntities">
+          <EntitySetMapping Name="Dealers">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Dealers">
+              <MappingFragment StoreEntitySet="Dealers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UpDealer" ColumnName="UpDealer" />
+                <ScalarProperty Name="DealerType" ColumnName="DealerType" />
+                <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+                <ScalarProperty Name="DealerUser" ColumnName="DealerUser" />
+                <ScalarProperty Name="DealerPass" ColumnName="DealerPass" />
+                <ScalarProperty Name="DealerAuthority" ColumnName="DealerAuthority" />
+                <ScalarProperty Name="DealerPhone" ColumnName="DealerPhone" />
+                <ScalarProperty Name="DealerFax" ColumnName="DealerFax" />
+                <ScalarProperty Name="DealerMail" ColumnName="DealerMail" />
+                <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="TaxNo" ColumnName="TaxNo" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="DealerLanguage" ColumnName="DealerLanguage" />
+                <ScalarProperty Name="VLanguage" ColumnName="VLanguage" />
+                <ScalarProperty Name="DealerLoginDate" ColumnName="DealerLoginDate" />
+                <ScalarProperty Name="DealerLoginIP" ColumnName="DealerLoginIP" />
+                <ScalarProperty Name="DealerPicture" ColumnName="DealerPicture" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="GKOD" ColumnName="GKOD" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="MailTo" ColumnName="MailTo" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Permissions" ColumnName="Permissions" />
+                <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Educations">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Educations">
+              <MappingFragment StoreEntitySet="Educations">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="University" ColumnName="University" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Permissions">
+              <MappingFragment StoreEntitySet="Permissions">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Students">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="TCNumber" ColumnName="TCNumber" />
+                <ScalarProperty Name="StudentUser" ColumnName="StudentUser" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BornDate" ColumnName="BornDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="StudentPass" ColumnName="StudentPass" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="EduStatus" ColumnName="EduStatus" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EDate" ColumnName="EDate" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="StudentLoginDate" ColumnName="StudentLoginDate" />
+                <ScalarProperty Name="StudentLoginIP" ColumnName="StudentLoginIP" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="GKOD" ColumnName="GKOD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Current">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Current">
+              <MappingFragment StoreEntitySet="Current">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

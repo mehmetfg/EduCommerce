@@ -1,0 +1,136 @@
+﻿@model IEnumerable<EduCommerce.Web.Students>
+
+@{
+    ViewBag.Title = "ListStudents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <h2>Öğrenciler</h2>
+
+    <p>
+        <h3>@Html.ActionLink("Yeni Ekle", "Create")</h3>
+    </p>
+    <table class="table table-bordered table-striped table-condensed flip-content">
+        <tr>
+            <th>
+                Bayi ID
+            </th>
+            <th>
+                İsim
+            </th>
+            <th>
+                T.C
+            </th>
+            <th>
+              Kullanıcı Adı
+            </th>
+            <th>
+                Şifre
+            </th>
+            <th>
+               Doğum Tarihi 
+            </th>
+            <th>
+               Cinsiyet
+            </th>
+            <th>
+               Mail
+            </th>
+            <th>
+               Telefon
+            </th>
+            <th>
+               Öğrenim Durumu
+            </th>
+            <th>
+               Adres
+            </th>
+            <th>
+               Durum
+            </th>
+            <th>
+                Eğitime Başladığı Tarih
+            </th>
+            <th>
+                Dil
+            </th>
+           
+            <th>
+               Başlama Tarihi
+            </th>
+            <th>
+              Bitiş Tarihi
+            </th>
+            <th>
+                Belgeleri Durumu
+            </th>
+            
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TCNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentUser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentPass)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BornDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EduStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Language)
+                </td>
+             
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FinishDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Document)
+                </td>
+               
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Detay", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

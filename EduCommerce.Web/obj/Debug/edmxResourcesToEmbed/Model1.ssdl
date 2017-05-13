@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KariyerPoliklinikDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Current">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="DealerID" />
+      <PropertyRef Name="StudentID" />
+      <PropertyRef Name="Type" />
+      <PropertyRef Name="CreateDate" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DealerID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Class" Type="int" />
+    <Property Name="Price" Type="money" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dealers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UpDealer" Type="int" />
+    <Property Name="DealerType" Type="int" />
+    <Property Name="DealerName" Type="nvarchar" MaxLength="255" />
+    <Property Name="DealerUser" Type="nvarchar" MaxLength="255" />
+    <Property Name="DealerPass" Type="nvarchar" MaxLength="255" />
+    <Property Name="DealerAuthority" Type="nvarchar" MaxLength="255" />
+    <Property Name="DealerPhone" Type="nvarchar" MaxLength="255" />
+    <Property Name="DealerFax" Type="nvarchar" MaxLength="255" />
+    <Property Name="DealerMail" Type="nvarchar" MaxLength="255" />
+    <Property Name="DealerAddress" Type="nvarchar(max)" />
+    <Property Name="IBAN" Type="nchar" MaxLength="15" />
+    <Property Name="BankName" Type="nchar" MaxLength="30" />
+    <Property Name="AccountName" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="TaxNo" Type="nchar" MaxLength="15" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="DealerLanguage" Type="nvarchar" MaxLength="150" />
+    <Property Name="VLanguage" Type="nchar" MaxLength="10" />
+    <Property Name="DealerLoginDate" Type="smalldatetime" />
+    <Property Name="DealerLoginIP" Type="nvarchar" MaxLength="255" />
+    <Property Name="DealerPicture" Type="nvarchar" MaxLength="255" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="GKOD" Type="nvarchar" MaxLength="255" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="255" />
+    <Property Name="MailTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Domain" Type="nvarchar" MaxLength="255" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Permissions" Type="nvarchar" MaxLength="255" />
+    <Property Name="Percentage" Type="float" />
+  </EntityType>
+  <EntityType Name="Educations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="University" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Permissions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dealer" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DealerID" Type="int" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="255" />
+    <Property Name="TCNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="StudentUser" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="BornDate" Type="date" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="StudentPass" Type="nvarchar" MaxLength="255" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+    <Property Name="EduStatus" Type="nvarchar" MaxLength="255" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="255" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="EDate" Type="smalldatetime" />
+    <Property Name="Language" Type="nvarchar" MaxLength="20" />
+    <Property Name="StudentLoginDate" Type="smalldatetime" />
+    <Property Name="StudentLoginIP" Type="nvarchar" MaxLength="255" />
+    <Property Name="StartDate" Type="smalldatetime" />
+    <Property Name="FinishDate" Type="smalldatetime" />
+    <Property Name="Document" Type="bit" />
+    <Property Name="GKOD" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="KariyerPoliklinikDBModelStoreContainer">
+    <EntitySet Name="Dealers" EntityType="Self.Dealers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Educations" EntityType="Self.Educations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permissions" EntityType="Self.Permissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Current" EntityType="Self.Current" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Current].[ID] AS [ID], 
+    [Current].[DealerID] AS [DealerID], 
+    [Current].[StudentID] AS [StudentID], 
+    [Current].[Type] AS [Type], 
+    [Current].[Class] AS [Class], 
+    [Current].[Price] AS [Price], 
+    [Current].[Quantity] AS [Quantity], 
+    [Current].[Status] AS [Status], 
+    [Current].[CreateDate] AS [CreateDate]
+    FROM [dbo].[Current] AS [Current]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
