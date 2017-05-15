@@ -19,7 +19,7 @@
             @Html.HiddenFor(model => model.ID)
 
             <div class="form-group">
-                @Html.LabelFor(model => model.UpDealer, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="control-label col-md-2"> Üst Bayi</div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.UpDealer, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.UpDealer, "", new { @class = "text-danger" })
@@ -27,7 +27,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.DealerType, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="control-label col-md-2"> Bayi Tipi</div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.DealerType, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.DealerType, "", new { @class = "text-danger" })
@@ -35,7 +35,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.DealerName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="control-label col-md-2"> Bayi Adı</div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.DealerName, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.DealerName, "", new { @class = "text-danger" })
@@ -43,7 +43,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.DealerUser, htmlAttributes: new { @class = "control-label col-md-2" })
+               <div class="control-label col-md-2"> Kullanıcı Adı</div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.DealerUser, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.DealerUser, "", new { @class = "text-danger" })
@@ -187,7 +187,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="control-label col-md-2"> Durum</div>
                 <div class="col-md-10">
                     <div class="checkbox">
                         @Html.EditorFor(model => model.Status)

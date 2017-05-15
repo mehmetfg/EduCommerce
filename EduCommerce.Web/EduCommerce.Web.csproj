@@ -1036,6 +1036,7 @@
     <Content Include="Views\Current\Detay.cshtml" />
     <Content Include="Views\Permissions\Detay.cshtml" />
     <Content Include="Views\Students\Detay.cshtml" />
+    <Content Include="Views\Current\PartCurrent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

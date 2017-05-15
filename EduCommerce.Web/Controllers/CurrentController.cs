@@ -24,6 +24,7 @@ namespace EduCommerce.Web.Controllers
             
             return View(Hesap);
         }
+
         public ActionResult GetCurrent()
         {
             CurrentCore cCore = new CurrentCore();
@@ -31,7 +32,16 @@ namespace EduCommerce.Web.Controllers
 
             return View(model);
         }
+        public ActionResult PartCurrent()
+        {
+            CurrentCore cCore = new CurrentCore();
+            DataTable model = cCore.getAll();
 
+            return PartialView(model);;
+            
+
+
+        }
         public ActionResult Detay(int id)
         {
             Current edu = (from p in islemler.Current
