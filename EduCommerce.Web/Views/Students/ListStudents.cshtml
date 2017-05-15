@@ -8,7 +8,7 @@
     <h2>Öğrenciler</h2>
 
     <p>
-        <h3>@Html.ActionLink("Yeni Ekle", "Create")</h3>
+        <h3>@Html.ActionLink("Yeni Ekle", "Yeni")</h3>
     </p>
     <table class="table table-bordered table-striped table-condensed flip-content">
         <tr>
@@ -125,9 +125,9 @@
                 </td>
                
                 <td>
-                    @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Detay", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Sil", "Delete", new { id = item.ID })
+                    @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID }) |
+                    @Html.ActionLink("Detay", "Detay", new { id = item.ID }) |
+                    @Html.ActionLink("Sil", "Sil", new { id = item.ID })
                 </td>
             </tr>
         }

@@ -64,7 +64,7 @@
                         <ul class="treeview-menu">
                             <li>@RenderSection("Bottom", false)
                             @Html.ActionLink("Bayiler", "ListDealers", "Dealers")</li>
-                            <li><a href="#">  Bayi Ekle</a></li>
+                            <li><a href="#">@Html.ActionLink("  Bayi Ekle ", "Yeni", "Dealers")</a></li>
                           
                         </ul>
                     </li>
@@ -77,7 +77,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li>@Html.ActionLink("Satışlar", "ListCurrent", "Current")</li>
-                            <li><a href="#">  Satış Ekle</a></li>
+                            <li><a href="#">  @Html.ActionLink("Satış Ekle", "Yeni", "Current")</a></li>
                             
                         </ul>
                     </li>
@@ -90,7 +90,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="#">@Html.ActionLink("Öğrenciler", "ListStudents", "Students")</a></li>
-                            <li><a href="#"> Öğrenci Ekle</a></li>
+                            <li><a href="#"> @Html.ActionLink("Öğrenci Ekle", "Yeni", "Students")</a></li>
                         </ul>
                     </li>
                     
@@ -102,7 +102,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="#">  @Html.ActionLink("Eğitimler", "ListEducation", "Educations")</a></li>
-                            <li><a href="#">  Eğitim Ekle</a></li>
+                            <li><a href="#">  @Html.ActionLink("Eğitim Ekle ", "Yeni", "Educations")</a></li>
                         </ul>
                     </li>
                     

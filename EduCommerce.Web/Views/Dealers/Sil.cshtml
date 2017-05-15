@@ -1,0 +1,260 @@
+﻿@model EduCommerce.Web.Dealers
+
+@{
+    ViewBag.Title = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <h2>Sil</h2>
+
+    <h3>Silmek İstediğinizden Emin misiniz?</h3>
+    <div>
+       <h4>Bayiler</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UpDealer)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UpDealer)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerUser)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerUser)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerPass)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerPass)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerAuthority)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerAuthority)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerPhone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerPhone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerFax)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerFax)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerMail)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerMail)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IBAN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IBAN)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BankName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BankName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AccountName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TaxNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TaxNo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CountryID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CountryID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CityID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CityID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerLanguage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerLanguage)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.VLanguage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VLanguage)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerLoginDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerLoginDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerLoginIP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerLoginIP)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerPicture)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerPicture)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GKOD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GKOD)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.WebSite)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WebSite)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MailTo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MailTo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Domain)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Domain)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Logo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Logo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Permissions)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Permissions)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Percentage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Percentage)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-default" /> |
+                @Html.ActionLink("Geri Dön", "Index")
+            </div>
+        }
+    </div>
+</div>

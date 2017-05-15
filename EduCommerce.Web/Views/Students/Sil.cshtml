@@ -1,0 +1,187 @@
+﻿@model EduCommerce.Web.Students
+
+@{
+    ViewBag.Title = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <h2>Sil</h2>
+
+    <h3>Silmek İstediğinizden Emin misiniz?</h3>
+    <div>
+       <h4>Öğrenciler</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DealerID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DealerID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StudentName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TCNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TCNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentUser)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StudentUser)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BornDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BornDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentPass)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StudentPass)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EduStatus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EduStatus)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Adress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Adress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Language)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Language)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentLoginDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StudentLoginDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentLoginIP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StudentLoginIP)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StartDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FinishDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FinishDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Document)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Document)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GKOD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GKOD)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-default" /> |
+                @Html.ActionLink("Geri Dön", "Index")
+            </div>
+        }
+    </div>
+    </div>

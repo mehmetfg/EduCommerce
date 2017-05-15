@@ -1,13 +1,12 @@
 ﻿@model EduCommerce.Web.Educations
 
 @{
-    ViewBag.Title = "Sil";
+    ViewBag.Title = "Detay";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="content-wrapper">
-    <h2>Sil</h2>
+    <h2>Detay</h2>
 
-    <h3>Silmek İstediğinize Eminmisiniz</h3>
     <div>
        <h4>Eğitimler</h4>
         <hr />
@@ -53,15 +52,9 @@
             </dd>
 
         </dl>
-
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="form-actions no-color">
-                <input type="submit" value="Sil" class="btn btn-default" /> |
-                @Html.ActionLink("Geri Dön", "Index")
-            </div>
-        }
     </div>
-</div>
+    <p>
+         @Html.ActionLink("Guncelle", "Guncelle", new { id = Model.ID }) |
+        @Html.ActionLink("Geri Dön", "Index")
+    </p>
+    </div>

@@ -1,4 +1,4 @@
-﻿@model EduCommerce.Web.Educations
+﻿@model EduCommerce.Web.Permissions
 
 @{
     ViewBag.Title = "Sil";
@@ -7,17 +7,17 @@
 <div class="content-wrapper">
     <h2>Sil</h2>
 
-    <h3>Silmek İstediğinize Eminmisiniz</h3>
+    <h3>Silmek İstediğinizden Emin misiniz?</h3>
     <div>
-       <h4>Eğitimler</h4>
+       <h4>Yetkiler</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.Category)
+                @Html.DisplayNameFor(model => model.Code)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Category)
+                @Html.DisplayFor(model => model.Code)
             </dd>
 
             <dt>
@@ -29,27 +29,11 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.Dealer)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Price)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Time)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Time)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.University)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.University)
+                @Html.DisplayFor(model => model.Dealer)
             </dd>
 
         </dl>
@@ -64,4 +48,4 @@
             </div>
         }
     </div>
-</div>
+    </div>

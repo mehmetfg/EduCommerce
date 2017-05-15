@@ -16,7 +16,7 @@ namespace EduCommerce.Web.Controllers
         // GET: Dealers
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("ListDealers");
         }
         public ActionResult GetDealers()
         {
@@ -31,13 +31,106 @@ namespace EduCommerce.Web.Controllers
            
             return View(Bayiler);
         }
-        
-        public ActionResult InsertDealers()
+
+        public ActionResult Detay(int id)
         {
+            Dealers edu = (from p in islemler.Dealers
+                              where p.ID == id
+                              select p).FirstOrDefault();
+            ViewBag.ID = 1;
+            return View(edu);
+        }
+
+        public ActionResult Yeni()
+        {
+
+
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Yeni(Dealers bayiler)
+        {
+            islemler.Dealers.Add(bayiler);
+            islemler.SaveChanges();
+
+            RedirectToAction("ListEducation");
             return View();
 
         }
-       
+
+        public ActionResult Guncelle(int id)
+        {
+            ViewBag.Id = 1;
+            Dealers bayiler = (from p in islemler.Dealers
+                                    where p.ID == id
+                                    select p).FirstOrDefault();
+            return View(bayiler);
+        }
+        [HttpPost]
+        public ActionResult Guncelle(Dealers bayiler)
+        {
+            Dealers seciliBayi = (from p in islemler.Dealers
+                                       where p.ID == bayiler.ID
+                                       select p).FirstOrDefault();
+            seciliBayi.DealerName = bayiler.DealerName;
+            seciliBayi.AccountName = bayiler.AccountName;
+            seciliBayi.BankName = bayiler.BankName;
+            seciliBayi.CityID = bayiler.CityID;
+            seciliBayi.CountryID = bayiler.CountryID;
+            seciliBayi.DealerAddress = bayiler.DealerAddress;
+            seciliBayi.DealerLoginDate = bayiler.DealerLoginDate;
+            seciliBayi.DealerLoginIP = bayiler.DealerLoginIP;
+            seciliBayi.DealerMail = bayiler.DealerMail;
+            seciliBayi.DealerPass = bayiler.DealerPass;
+            seciliBayi.DealerPhone = bayiler.DealerPhone;
+            seciliBayi.DealerPicture = bayiler.DealerPicture;
+
+            seciliBayi.DealerType = bayiler.DealerType;
+            seciliBayi.DealerUser = bayiler.DealerUser;
+            seciliBayi.Domain = bayiler.Domain;
+            seciliBayi.GKOD = bayiler.GKOD;
+
+            seciliBayi.IBAN = bayiler.IBAN;
+            seciliBayi.ID = bayiler.ID;
+            seciliBayi.Logo = bayiler.Logo;
+            seciliBayi.MailTo = bayiler.MailTo;
+
+            seciliBayi.Percentage = bayiler.Percentage;
+            seciliBayi.Permissions = bayiler.Permissions;
+            seciliBayi.Status = bayiler.Status;
+            seciliBayi.TaxNo = bayiler.TaxNo;
+            seciliBayi.UpDealer = bayiler.UpDealer;
+            seciliBayi.VLanguage = bayiler.VLanguage;
+            seciliBayi.BankName = bayiler.BankName;
+            seciliBayi.WebSite = bayiler.WebSite;
+
+            islemler.SaveChanges();
+            return View();
+
+
+        }
+        public ActionResult Sil(int id)
+        {
+            Dealers bayiler = (from p in islemler.Dealers
+                                    where p.ID == id
+                                    select p).FirstOrDefault();
+            return View(bayiler);
+        }
+        [HttpPost, ActionName("Sil")]
+        public ActionResult SilmeIslemi(int id)
+        {
+            Dealers silinecekEgitim = (from p in islemler.Dealers
+                                          where p.ID == id
+                                          select p).FirstOrDefault();
+
+            int egitimId = silinecekEgitim.ID;
+            islemler.Dealers.Remove(silinecekEgitim);
+            islemler.SaveChanges();
+            return RedirectToAction("Dealers");
+
+        }
+
 
     }
 }

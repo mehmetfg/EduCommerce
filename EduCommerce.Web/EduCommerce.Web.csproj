@@ -1016,10 +1016,26 @@
     <Content Include="Views\Educations\ListEducation.cshtml" />
     <Content Include="Views\Permissions\ListPermission.cshtml" />
     <Content Include="Views\Students\ListStudents.cshtml" />
-    <Content Include="Views\Educations\DetailEducation.cshtml" />
     <Content Include="Views\Educations\Yeni.cshtml" />
     <Content Include="Views\Educations\Guncelle.cshtml" />
     <Content Include="Views\Educations\Sil.cshtml" />
+    <Content Include="Views\Current\Yeni.cshtml" />
+    <Content Include="Views\Current\Guncelle.cshtml" />
+    <Content Include="Views\Current\Sil.cshtml" />
+    <Content Include="Views\Dealers\Yeni.cshtml" />
+    <Content Include="Views\Dealers\Guncelle.cshtml" />
+    <Content Include="Views\Dealers\Sil.cshtml" />
+    <Content Include="Views\Students\Yeni.cshtml" />
+    <Content Include="Views\Students\Guncelle.cshtml" />
+    <Content Include="Views\Students\Sil.cshtml" />
+    <Content Include="Views\Permissions\Yeni.cshtml" />
+    <Content Include="Views\Permissions\Guncelle.cshtml" />
+    <Content Include="Views\Permissions\Sil.cshtml" />
+    <Content Include="Views\Educations\Detay.cshtml" />
+    <Content Include="Views\Dealers\Detay.cshtml" />
+    <Content Include="Views\Current\Detay.cshtml" />
+    <Content Include="Views\Permissions\Detay.cshtml" />
+    <Content Include="Views\Students\Detay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

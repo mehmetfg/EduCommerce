@@ -32,7 +32,7 @@ namespace EduCommerce.Web.Controllers
 
             return View(Egitimler);
         }
-        public ActionResult DetailEducation(int id)
+        public ActionResult Detay(int id)
         {
             Educations edu = (from p in islemler.Educations
                               where p.ID == id
@@ -42,16 +42,7 @@ namespace EduCommerce.Web.Controllers
         }
         public ActionResult Yeni()
         {
-            //var bolumler = islimler.Educations.ToList().Select(b => new
-
-            //  SelectListItem
-            //{
-            //    Selected = false,
-            //    Text = b.Name,
-            //    Value = b.ID.ToString()
-
-            //}).ToString();
-            //ViewBag.Bolumler = bolumler;
+          
                         
 
             return View();

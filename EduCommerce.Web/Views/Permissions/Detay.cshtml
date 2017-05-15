@@ -1,0 +1,44 @@
+﻿@model EduCommerce.Web.Permissions
+
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <h2>Detay</h2>
+
+    <div>
+       <h4>Yetkiler</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Code)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Code)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Dealer)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Dealer)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+         @Html.ActionLink("Guncelle", "Guncelle", new { id = Model.ID }) |
+        @Html.ActionLink("Geri Dön", "Index")
+    </p>
+    </div>
