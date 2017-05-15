@@ -12,7 +12,7 @@ namespace EduCommerce.Web.Controllers
         // GET: Permissions
         public ActionResult Index()
         {
-            return RedirectToAction("ListPermissions");
+            return RedirectToAction("ListPermission");
         }
       
         public ActionResult ListPermission()
@@ -25,7 +25,6 @@ namespace EduCommerce.Web.Controllers
         }
         public ActionResult Yeni()
         {
-
 
 
             return View();

@@ -14,9 +14,7 @@ namespace EduCommerce.Web.Controllers
         // GET: Educations
         public ActionResult Index()
         {
-            EducationCore eCore = new EducationCore();
-            DataTable model = eCore.getAll();
-            return View(model);
+            return RedirectToAction("ListEducation");
         }
         public ActionResult getEdu()
         {
@@ -98,7 +96,7 @@ namespace EduCommerce.Web.Controllers
             int egitimId = silinecekEgitim.ID;
             islemler.Educations.Remove(silinecekEgitim);
             islemler.SaveChanges();
-            return RedirectToAction("Educations");
+            return RedirectToAction("ListEducations");
 
 
 
