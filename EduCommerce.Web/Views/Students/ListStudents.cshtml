@@ -8,10 +8,10 @@
     <h2>Öğrenciler</h2>
 
     <p>
-        <h3>@Html.ActionLink("Yeni Ekle", "Yeni")</h3>
+        <h3 >@Html.ActionLink("Yeni Ekle", "Yeni", null, new { @class = "btn-info" }) </h3>
     </p>
     <table class="table table-bordered table-striped table-condensed flip-content">
-        <tr>
+        <tr >
             <th>
                 Bayi ID
             </th>
@@ -80,7 +80,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.TCNumber)
                 </td>
-                <td>
+                <td class="label label-sm label-danger">
                     @Html.DisplayFor(modelItem => item.StudentUser)
                 </td>
                 <td>
@@ -92,7 +92,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Gender)
                 </td>
-                <td>
+                <td  class="label label-sm label-info">
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
