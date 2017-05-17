@@ -63,8 +63,8 @@ namespace EduCommerce.Web.Controllers
             islemler.Current.Add(cari);
             islemler.SaveChanges();
 
-            RedirectToAction("ListCurrent");
-            return View();
+
+            return RedirectToAction("ListCurrent");
 
         }
 
@@ -89,7 +89,7 @@ namespace EduCommerce.Web.Controllers
             seciliCari.Type = cari.Type;
             seciliCari.StudentID = cari.StudentID;
             islemler.SaveChanges();
-            return View();
+            return RedirectToAction("ListCurrent");
 
 
         }

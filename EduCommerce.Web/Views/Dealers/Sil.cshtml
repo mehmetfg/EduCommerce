@@ -6,157 +6,159 @@
 }
 
 <div class="content-wrapper">
-    <h2>Sil</h2>
+    <div class="panel panel-primary panel-body">
+        <h2>Sil</h2>
 
-    <h3>Silmek İstediğinizden Emin misiniz?</h3>
-    <div>
-       <h4>Bayiler</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-               Üst Bayi
-            </dt>
+        <h3>Silmek İstediğinizden Emin misiniz?</h3>
+        <div>
+            <h4>Bayiler</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    Üst Bayi
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.UpDealer)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.UpDealer)
+                </dd>
 
-            <dt>
-              Bayi Tipi
-            </dt>
+                <dt>
+                    Bayi Tipi
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DealerType)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DealerType)
+                </dd>
 
-            <dt>
-                Bayi Adı
-            </dt>
+                <dt>
+                    Bayi Adı
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DealerName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DealerName)
+                </dd>
 
-            <dt>
-               Bayi Kullanıcı Adı
-            </dt>
+                <dt>
+                    Bayi Kullanıcı Adı
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DealerUser)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DealerUser)
+                </dd>
 
-            <dt>
-              Bayi Şifresi
-            </dt>
+                <dt>
+                    Bayi Şifresi
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DealerPass)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DealerPass)
+                </dd>
 
-            <dt>
-                Bayi Yetki
-            </dt>
+                <dt>
+                    Bayi Yetki
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DealerAuthority)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DealerAuthority)
+                </dd>
 
-            <dt>
-               Telefon
-            </dt>
+                <dt>
+                    Telefon
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DealerPhone)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DealerPhone)
+                </dd>
 
-            <dt>
-                Fax
-            </dt>
+                <dt>
+                    Fax
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DealerFax)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DealerFax)
+                </dd>
 
-            <dt>
-                Mail
-            </dt>
+                <dt>
+                    Mail
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DealerMail)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DealerMail)
+                </dd>
 
-            <dt>
-                Adres
-            </dt>
+                <dt>
+                    Adres
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DealerAddress)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DealerAddress)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.IBAN)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IBAN)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.IBAN)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.IBAN)
+                </dd>
 
-            <dt>
-               Banka Adı
-            </dt>
+                <dt>
+                    Banka Adı
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.BankName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.BankName)
+                </dd>
 
-            <dt>
-              Hesap Adı
-            </dt>
+                <dt>
+                    Hesap Adı
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.AccountName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.AccountName)
+                </dd>
 
-            <dt>
-              Vergi No
-            </dt>
+                <dt>
+                    Vergi No
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.TaxNo)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TaxNo)
+                </dd>
 
-            <dt>
-               Ülke
-            </dt>
+                <dt>
+                    Ülke
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.CountryID)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.CountryID)
+                </dd>
 
-            <dt>
-                Şehir
-            </dt>
+                <dt>
+                    Şehir
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.CityID)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.CityID)
+                </dd>
 
-            <dt>
-              Dil
-            </dt>
+                <dt>
+                    Dil
+                </dt>
 
-            
 
-        </dl>
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+            </dl>
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Sil" class="btn btn-default" /> |
-                @Html.ActionLink("Geri Dön", "Index")
-            </div>
-        }
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Sil" class="btn btn-danger" /> |
+                    @Html.ActionLink("Geri Dön", "Index")
+                </div>
+            }
+        </div>
     </div>
 </div>

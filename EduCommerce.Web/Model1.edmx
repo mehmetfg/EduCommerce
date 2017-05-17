@@ -9,8 +9,7 @@
 warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Current">
           <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="DealerID" />
+            <PropertyRef Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false />"<PropertyRef Name="DealerID" />
             <PropertyRef Name="StudentID" />
             <PropertyRef Name="Type" />
             <PropertyRef Name="CreateDate" />
@@ -64,7 +63,7 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Category" Type="varchar" MaxLength="50" />
           <Property Name="Name" Type="nchar" MaxLength="10" />
           <Property Name="Price" Type="nvarchar" MaxLength="50" />
@@ -169,7 +168,7 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />

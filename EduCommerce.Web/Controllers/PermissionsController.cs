@@ -43,9 +43,8 @@ namespace EduCommerce.Web.Controllers
             islemler.Permissions.Add(yetkiler);
             islemler.SaveChanges();
 
-            RedirectToAction("ListPermissions");
-            return View();
-
+           return RedirectToAction("ListPermission");
+            
         }
 
         public ActionResult Guncelle(int id)
@@ -66,7 +65,7 @@ namespace EduCommerce.Web.Controllers
             seciliYetki.Dealer = yetkiler.Dealer;
             seciliYetki.Name= yetkiler.Name;
             islemler.SaveChanges();
-            return View();
+            return RedirectToAction("ListPermission");
 
 
         }

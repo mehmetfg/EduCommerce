@@ -40,8 +40,6 @@ namespace EduCommerce.Web.Controllers
         public ActionResult Yeni()
         {
 
-
-
             return View();
         }
         [HttpPost]
@@ -49,9 +47,7 @@ namespace EduCommerce.Web.Controllers
         {
             islemler.Students.Add(ogrenciler);
             islemler.SaveChanges();
-
-            RedirectToAction("ListStudents");
-            return View();
+            return RedirectToAction("ListStudents");
 
         }
 
@@ -101,7 +97,7 @@ namespace EduCommerce.Web.Controllers
             seciliOgrenci.TCNumber = ogrenciler.TCNumber;
 
             islemler.SaveChanges();
-            return View();
+            return RedirectToAction("ListStudents");
 
 
         }

@@ -5,60 +5,62 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="content-wrapper">
-    <div class="portlet light bordered">
-        <div class="portlet-title">
-            <h2>Satışlar</h2>
-
-            <p>
-                <h3>@Html.ActionLink("Yeni Ekle", "Yeni")</h3>
-            </p>
-            <table class="table table-bordered table-striped flip-content">
-                <tr>
-                    <th>
-                        Bayi
-                    </th>
-                    <th>
-                        Öğrenci
-                    </th>
-                    <th>
-                        Fiyat
-                    </th>
-                    <th>
-                        Durum
-                    </th>
-                    <th>
-                        Tarih
-                    </th>
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model)
-                {
+    <div class="panel panel-primary panel-body">
+        <div class="portlet light bordered">
+           
+                <h2>Satışlar</h2>
+            <hr />
+                <p>
+                    <h3>@Html.ActionLink("Yeni Ekle", "Yeni", null, new { @class = " btn btn-primary" })</h3>
+                </p>
+                <table class="table table-bordered table-striped flip-content">
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.DealerID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.StudentID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Price)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Status)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CreateDate)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID }) |
-                            @Html.ActionLink("Detay", "Detay", new { id = item.ID }) |
-                            @Html.ActionLink("Sil", "Sil", new { id = item.ID })
-                        </td>
+                        <th class="btn-danger">
+                            Bayi
+                        </th>
+                        <th class="btn-danger">
+                            Öğrenci
+                        </th>
+                        <th class="btn-danger">
+                            Fiyat
+                        </th>
+                        <th class="btn-danger">
+                            Durum
+                        </th>
+                        <th class="btn-danger">
+                            Tarih
+                        </th>
+                        <th class="btn-danger"></th>
                     </tr>
-                }
 
-            </table>
-        </div>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DealerID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StudentID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreateDate)
+                            </td>
+                            <td  class="text-nowrap">
+                                @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID }, new { @class = " btn btn-info btn-xs " }) |
+                                @Html.ActionLink("Detay", "Detay", new { id = item.ID }, new { @class = " btn btn-primary btn-xs" }) |
+                                @Html.ActionLink("Sil", "Sil", new { id = item.ID }, new { @class = " btn btn-danger btn-xs" })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
         </div>
     </div>
+ 

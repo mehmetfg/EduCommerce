@@ -51,8 +51,8 @@ namespace EduCommerce.Web.Controllers
             islemler.Educations.Add(egitimler);
             islemler.SaveChanges();
 
-            RedirectToAction("ListEducation");
-            return View();
+            
+            return RedirectToAction("ListEducation");
 
         }
 
@@ -75,7 +75,7 @@ namespace EduCommerce.Web.Controllers
             seciliEgitim.Time = egitimler.Time;
             seciliEgitim.University = egitimler.University;
             islemler.SaveChanges();
-            return View();
+            return RedirectToAction("ListEducation");
 
 
         }
@@ -96,7 +96,7 @@ namespace EduCommerce.Web.Controllers
             int egitimId = silinecekEgitim.ID;
             islemler.Educations.Remove(silinecekEgitim);
             islemler.SaveChanges();
-            return RedirectToAction("ListEducations");
+            return RedirectToAction("ListEducation");
 
 
 

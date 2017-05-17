@@ -5,51 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="content-wrapper">
-    <h2>Eğitimler</h2>
-
-    <p>
-        <h3>@Html.ActionLink("Yeni Ekle", "Yeni")</h3>
-    </p>
-    <table class="table table-bordered table-striped table-condensed flip-content">
-        <tr><th>
-    Kategori
-</th>
-<th>
-    Eğitim Adı
-</th>
-<th>
-    Fiyat 
-</th>
-<th>
-   Süre
-</th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Time)
-            </td>
+    <div class="panel panel-primary panel-body">
+        <h2>Eğitimler</h2>
+        <hr />
         
-                <td>
-
-                    @Html.ActionLink("Güncelle", "Guncelle", new { id=item.ID}) |
-                    @Html.ActionLink("Detay", "Detay", new { id=item.ID}) |
-                    @Html.ActionLink("Sil", "Sil", new { id=item.ID})
-                </td>
+<p>
+            <h3>@Html.ActionLink("Yeni Ekle", "Yeni", null, new { @class = " btn btn-primary" })</h3>
+        </p>
+        <table class="table table-bordered table-striped table-condensed flip-content">
+            <tr>
+                <th class="btn-danger">
+                    Kategori
+                </th>
+                <th class="btn-danger">
+                    Eğitim Adı
+                </th>
+                <th class="btn-danger">
+                    Fiyat
+                </th>
+                <th class="btn-danger">
+                    Süre
+                </th>
+                <th class="btn-danger"></th>
             </tr>
-        }
 
-    </table>
-</div>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Time)
+                    </td>
+
+                    <td  class="text-nowrap">
+
+                        @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID }, new { @class = " btn btn-info  btn-xs" }) |
+                        @Html.ActionLink("Detay", "Detay", new { id = item.ID }, new { @class = " btn btn-primary btn-xs" }) |
+                        @Html.ActionLink("Sil", "Sil", new { id = item.ID }, new { @class = " btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div></div>

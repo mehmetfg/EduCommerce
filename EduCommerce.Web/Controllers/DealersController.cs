@@ -55,7 +55,7 @@ namespace EduCommerce.Web.Controllers
             islemler.SaveChanges();
 
             RedirectToAction("ListEducation");
-            return View();
+            return RedirectToAction("ListDealers");
 
         }
 
@@ -106,7 +106,8 @@ namespace EduCommerce.Web.Controllers
             seciliBayi.WebSite = bayiler.WebSite;
 
             islemler.SaveChanges();
-            return View();
+            return RedirectToAction("ListDealers");
+
 
 
         }
@@ -127,7 +128,7 @@ namespace EduCommerce.Web.Controllers
             int egitimId = silinecekEgitim.ID;
             islemler.Dealers.Remove(silinecekEgitim);
             islemler.SaveChanges();
-            return RedirectToAction("Dealers");
+            return RedirectToAction("ListDealers");
 
         }
 

@@ -5,132 +5,133 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="content-wrapper">
-    <h2>Öğrenciler</h2>
-
-    <p>
-        <h3 >@Html.ActionLink("Yeni Ekle", "Yeni", null, new { @class = "btn-info" }) </h3>
-    </p>
-    <table class="table table-bordered table-striped table-condensed flip-content">
-        <tr >
-            <th>
-                Bayi ID
-            </th>
-            <th>
-                İsim
-            </th>
-            <th>
-                T.C
-            </th>
-            <th>
-              Kullanıcı Adı
-            </th>
-            <th>
-                Şifre
-            </th>
-            <th>
-               Doğum Tarihi 
-            </th>
-            <th>
-               Cinsiyet
-            </th>
-            <th>
-               Mail
-            </th>
-            <th>
-               Telefon
-            </th>
-            <th>
-               Öğrenim Durumu
-            </th>
-            <th>
-               Adres
-            </th>
-            <th>
-               Durum
-            </th>
-            <th>
-                Eğitime Başladığı Tarih
-            </th>
-            <th>
-                Dil
-            </th>
-           
-            <th>
-               Başlama Tarihi
-            </th>
-            <th>
-              Bitiş Tarihi
-            </th>
-            <th>
-                Belgeleri Durumu
-            </th>
-            
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+    <div class="panel panel-primary panel-body">
+        <h2>Öğrenciler</h2>
+    <hr/>
+        <p>
+            <h3>@Html.ActionLink("Yeni Ekle", "Yeni", null, new { @class = " btn btn-primary" }) </h3>
+        </p>
+        <table class="table table-bordered table-striped table-condensed flip-content">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DealerID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StudentName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TCNumber)
-                </td>
-                <td class="label label-sm label-danger">
-                    @Html.DisplayFor(modelItem => item.StudentUser)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StudentPass)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BornDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td  class="label label-sm label-info">
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EduStatus)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Adress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Language)
-                </td>
-             
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FinishDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Document)
-                </td>
-               
-                <td>
-                    @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID }) |
-                    @Html.ActionLink("Detay", "Detay", new { id = item.ID }) |
-                    @Html.ActionLink("Sil", "Sil", new { id = item.ID })
-                </td>
-            </tr>
-        }
+                <th class="label-danger ">
+                    Bayi ID
+                </th>
+                <th class="btn-danger">
+                    İsim
+                </th>
+                <th class="btn-danger">
+                    T.C
+                </th>
+                <th class="btn-danger">
+                    Kullanıcı Adı
+                </th>
+                <th class="btn-danger">
+                    Şifre
+                </th>
+                <th class="btn-danger">
+                    Doğum Tarihi
+                </th>
+                <th class="btn-danger">
+                    Cinsiyet
+                </th>
+                <th class="btn-danger">
+                    Mail
+                </th>
+                <th class="btn-danger">
+                    Telefon
+                </th>
+                <th class="btn-danger">
+                    Öğrenim Durumu
+                </th>
+                <th class="btn-danger">
+                    Adres
+                </th>
+                <th class="btn-danger">
+                    Durum
+                </th>
+                <th class="btn-danger">
+                    Eğitime Başladığı Tarih
+                </th>
+                <th class="btn-danger">
+                    Dil
+                </th>
 
-    </table>
-</div>
+                <th class="btn-danger">
+                    Başlama Tarihi
+                </th>
+                <th class="btn-danger">
+                    Bitiş Tarihi
+                </th>
+                <th class="btn-danger">
+                    Belgeleri Durumu
+                </th>
+
+                <th class="btn-danger"></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TCNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentUser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentPass)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BornDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EduStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Language)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FinishDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Document)
+                    </td>
+
+                    <td  class="text-nowrap">
+                        @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID }, new { @class = " btn btn-info btn-xs " }) |
+                        @Html.ActionLink("Detay", "Detay", new { id = item.ID }, new { @class = " btn btn-primary btn-xs" }) |
+                        @Html.ActionLink("Sil", "Sil", new { id = item.ID }, new { @class = " btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div></div>
