@@ -9,7 +9,8 @@
 warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Current">
           <Key>
-            <PropertyRef Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false />"<PropertyRef Name="DealerID" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="DealerID" />
             <PropertyRef Name="StudentID" />
             <PropertyRef Name="Type" />
             <PropertyRef Name="CreateDate" />
@@ -212,7 +213,7 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
         </EntityType>
         <EntityType Name="Current">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID"  />
             <PropertyRef Name="DealerID" />
             <PropertyRef Name="StudentID" />
             <PropertyRef Name="Type" />
