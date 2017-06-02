@@ -1,0 +1,38 @@
+
+div.koddosturenkli {
+position : fixed;
+z-index : 9999990;
+}
+div.sosyal7kd {
+top : 50%;
+left : 0;
+margin-top : -250px;
+width : 80px;
+height : 470px;
+background : transparent;
+}
+.a8a {
+display : block;
+position : relative;
+left : -5px;
+float : left;
+background : #44f;
+width : 30px;
+height : 120px;
+margin : 0 0 6px 0;
+background-position : center center;
+background-repeat : no-repeat;
+transition : all 0.4s ease-out;
+box-shadow : -4px 0 4px -4px #444;
+border-top-left-radius : 3px;
+border-bottom-left-radius : 3px;
+}
+
+.buttons{
+background-image : url(image/button.png);
+background-color : #dd3333;
+margin : 0 40 6px 0;
+}
+
+
+
