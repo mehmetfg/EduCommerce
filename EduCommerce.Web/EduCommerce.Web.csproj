@@ -197,10 +197,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Web\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Web\Controllers\WebController.cs" />
     <Compile Include="Areas\Web\WebAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CurrentController.cs" />
     <Compile Include="Controllers\DealersController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -948,6 +951,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Web\Views\web.config" />
+    <Content Include="Areas\Web\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Web\Views\Web\Index.cshtml" />
+    <Content Include="Areas\Web\Views\Default\Index.cshtml" />
+    <Content Include="Areas\Web\Views\Default\getEdu.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\demo.js" />
     <Content Include="Scripts\html5shiv.min.js" />
@@ -1039,12 +1046,15 @@
     <Content Include="Views\Permissions\Detay.cshtml" />
     <Content Include="Views\Students\Detay.cshtml" />
     <Content Include="Views\Current\PartCurrent.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Areas\Web\Views\Shared\_IncHeader.cshtml" />
+    <Content Include="Areas\Web\Views\Shared\_IncTop.cshtml" />
+    <Content Include="Areas\Web\Views\Shared\_IncSlider.cshtml" />
+    <Content Include="Areas\Web\Views\Shared\_IncFooter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Web\Controllers\" />
     <Folder Include="Areas\Web\Models\" />
-    <Folder Include="Areas\Web\Views\Shared\" />
     <Folder Include="Content\fa\" />
     <Folder Include="Content\ionic\" />
     <Folder Include="Content\skins\" />

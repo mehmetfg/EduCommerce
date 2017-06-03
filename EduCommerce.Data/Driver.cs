@@ -20,7 +20,7 @@ namespace EduCommerce.Data
         }
 
         public driver()
-        {   cn = new SqlConnection("Data Source=MEHMETG\\MFGSERVER;Initial Catalog=KariyerPoliklinikDB;Integrated Security=True");
+        {   cn = new SqlConnection("Data Source=MEHMETFG\\MEHMETFG;Initial Catalog=KariyerPoliklinikDB;Integrated Security=True");
             //  if (ConfigurationManager.ConnectionStrings["Baglantim"] == null)
             //Data Source=MEHMETG\MFGSERVER;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
             //      throw new ApplicationException("Lütfen, Web.Config dosyasına veritabanına bağlatı tanımı yapınız !");
