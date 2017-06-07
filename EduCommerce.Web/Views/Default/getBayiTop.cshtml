@@ -1,0 +1,85 @@
+﻿@model EduCommerce.Web.Dealers
+    
+<div class="side-panel-widget mt-30">
+    <div class="widget no-border">
+        <ul>
+            <li class="font-14 mb-5"> <i class="fa fa-phone text-theme-colored"></i> <a href="#" class="text-gray"> @Model.DealerPhone</a> </li>
+            <li class="font-14 mb-5">  <a href="#" class="text-gray">@Model.DealerMail</a> </li>
+        </ul>
+    </div>
+    <p>Copyright &copy;2017 <a href="http://www.onlinesoft.net" target="_blank">@Model.DealerName</a></p>
+</div>
+    </div>
+</div>
+
+
+<!-- Header -->
+<header id="header" class="header">
+    <div class="header-top bg-theme-color-2 sm-text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="widget no-border m-0">
+                        <ul class="list-inline">
+                            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white"></i> <a class="text-white" href="#"></a>@Model.DealerPhone </li>
+                            <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="#">@Model.DealerMail</a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="widget no-border m-0">
+                        <ul class="list-inline text-right sm-text-center">
+                            <li>
+                                <a href="giris.html" class="text-white">Giriş</a>
+                            </li>
+                            <li class="text-white">|</li>
+                            <li>
+                                <a href="kayit_formu.html" class="text-white">Kayıt Ol</a>
+                            </li>
+                            <li class="text-white">|</li>
+                            <li>
+                                <a href="#" class="text-white" data-toggle="modal" data-target=".bs-example-modal-sm">Sepet<span> [1]<span></a>
+                                <!-- Large modal -->
+                                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="text-center">Eğitim <span class="text-theme-color-2">Sepeti</span></h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h5 class="text-center">Satın Alınan Eğitimin Adı</h5>
+                                                <hr>
+                                                <p class="text-center"><img class="text-center" src="~/Content/files/ayarlar/sepet.jpg"></p>
+                                                <p></p>
+                                            </div>
+                                            <div data-example-id="bordered-table" class="bs-example">
+                                                <table class="table table-bordered">
+                                                    <tbody>
+                                                        <tr> <th class="text-right" scope="row">Ara Toplam:</th>  <td>10.00TL</td>     </tr>
+                                                        <tr> <th class="text-right" scope="row">Toplam:</th>  <td>10.00TL</td>     </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                                                <a href="odeme.html" type="target" class="btn btn-primary text-white">Satın Al</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-nav">
+        <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
+            <div class="container">
+                <nav id="menuzord-right" class="menuzord blue no-bg">
+                    <a class="menuzord-brand pull-left flip xs-pull-center mb-15" href="#"><img src="@Model.Logo" width="220" height="92" alt=""></a>
+                    <div id="side-panel-trigger" class="side-panel-trigger">
+                        <a href="#"><i class="fa fa-bars font-24 text-gray"></i></a>
+                    </div>

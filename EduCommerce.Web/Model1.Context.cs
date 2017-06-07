@@ -16,7 +16,7 @@ namespace EduCommerce.Web
     public partial class KariyerPoliklinikDBEntities : DbContext
     {
         public KariyerPoliklinikDBEntities()
-            : base("name=KariyerPoliklinikDBEntities")
+            : base("name=KariyerPoliklinikDBEntities1")
         {
         }
     
@@ -25,10 +25,14 @@ namespace EduCommerce.Web
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Comment> Comment { get; set; }
+        public virtual DbSet<Current> Current { get; set; }
         public virtual DbSet<Dealers> Dealers { get; set; }
         public virtual DbSet<Educations> Educations { get; set; }
+        public virtual DbSet<Media> Media { get; set; }
         public virtual DbSet<Permissions> Permissions { get; set; }
+        public virtual DbSet<Personel> Personel { get; set; }
+        public virtual DbSet<Reference> Reference { get; set; }
         public virtual DbSet<Students> Students { get; set; }
-        public virtual DbSet<Current> Current { get; set; }
     }
 }

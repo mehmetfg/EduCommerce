@@ -1,0 +1,182 @@
+﻿@model EduCommerce.Web.Students
+
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="panel panel-primary panel-body">
+        <h2>Detay</h2>
+
+        <div>
+            <h4>Öğrenciler</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DealerID)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DealerID)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TCNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TCNumber)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentUser)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentUser)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BornDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BornDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentPass)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentPass)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EduStatus)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EduStatus)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Adress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Adress)
+                </dd>
+
+                <dt>
+                    Durum
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Language)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Language)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentLoginDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentLoginDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StudentLoginIP)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StudentLoginIP)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StartDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FinishDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FinishDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Document)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Document)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GKOD)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GKOD)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Guncelle", "Guncelle", new { id = Model.ID }) |
+            @Html.ActionLink("Geri Dön", "Index")
+        </p>
+    </div>
+</div>

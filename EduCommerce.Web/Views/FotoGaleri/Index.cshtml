@@ -1,0 +1,69 @@
+﻿@model IEnumerable<EduCommerce.Web.Media>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-content bg-lighter">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="/Content/files/ayarlar/3.jpg">
+        <div class="container pt-70 pb-20">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title text-white text-center">Fotoğraf Galerimiz</h2>
+                        <ol class="breadcrumb text-left text-black mt-10">
+                            <li><a href="#">Anasayfa</a></li>
+                            <li><a href="#">Galeri</a></li>
+                            <li class="active text-gray-silver">Fotoğraf Galerimiz</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Course gird -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 blog-pull-right">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="gallery-item wheel">
+                                    <div class="work-gallery">
+                                        <div class="gallery-thumb">
+                                            <img class="img-fullwidth" alt="" src="@item.Image">
+                                            <div class="gallery-overlay"></div>
+                                            <div class="gallery-contect">
+                                                <ul class="styled-icons icon-bordered icon-circled icon-sm">
+                                                    <li><a data-rel="prettyPhoto" href="@item.Image"><i class="fa fa-arrows"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-bottom-part text-center">
+                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0">@item.Type</h4>
+                                            <p class="sub-title m-0">@item.Type</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        }
+                    </div>
+                </div>
+                @{ Html.RenderPartial("Inc_Left");}
+
+            </div>
+
+
+
+        </div>
+    </section>
+</div>

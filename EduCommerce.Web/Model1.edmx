@@ -5,15 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="KariyerPoliklinikDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DealerID" Type="int" />
+          <Property Name="StudenID" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
         <EntityType Name="Current">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="DealerID" />
-            <PropertyRef Name="StudentID" />
-            <PropertyRef Name="Type" />
-            <PropertyRef Name="CreateDate" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DealerID" Type="int" Nullable="false" />
@@ -65,11 +68,25 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Category" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryID" Type="int" />
           <Property Name="Name" Type="nchar" MaxLength="10" />
           <Property Name="Price" Type="nvarchar" MaxLength="50" />
-          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="300" />
           <Property Name="University" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contingent" Type="int" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="FinishTime" Type="datetime" />
+          <Property Name="Definition" Type="nchar" MaxLength="3000" />
+          <Property Name="Picture" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Media">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DealerID" Type="nchar" MaxLength="10" />
+          <Property Name="Type" Type="nchar" MaxLength="10" />
+          <Property Name="Image" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Permissions">
           <Key>
@@ -80,6 +97,33 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
           <Property Name="Name" Type="nvarchar" MaxLength="255" />
           <Property Name="Dealer" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DealerID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Task" Type="nchar" MaxLength="50" />
+          <Property Name="Definition" Type="nchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="WebSite" Type="nchar" MaxLength="80" />
+          <Property Name="Description" Type="nchar" MaxLength="1000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'KariyerPoliklinikDB.dbo.Slider' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Slider">
+          <Property Name="ID" Type="int" />
+          <Property Name="Hider" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Image" Type="nchar" MaxLength="100" />
+        </EntityType>-->
         <EntityType Name="Students">
           <Key>
             <PropertyRef Name="ID" />
@@ -107,29 +151,44 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
           <Property Name="GKOD" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityContainer Name="KariyerPoliklinikDBModelStoreContainer">
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Current" EntityType="Self.Current" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dealers" EntityType="Self.Dealers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Educations" EntityType="Self.Educations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Media" EntityType="Self.Media" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Permissions" EntityType="Self.Permissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Current" EntityType="Self.Current" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Current].[ID] AS [ID], 
-    [Current].[DealerID] AS [DealerID], 
-    [Current].[StudentID] AS [StudentID], 
-    [Current].[Type] AS [Type], 
-    [Current].[Class] AS [Class], 
-    [Current].[Price] AS [Price], 
-    [Current].[Quantity] AS [Quantity], 
-    [Current].[Status] AS [Status], 
-    [Current].[CreateDate] AS [CreateDate]
-    FROM [dbo].[Current] AS [Current]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KariyerPoliklinikDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealerID" Type="Int32" />
+          <Property Name="StudenID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Current">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealerID" Type="Int32" Nullable="false" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Class" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         <EntityType Name="Dealers">
           <Key>
             <PropertyRef Name="ID" />
@@ -170,11 +229,25 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryID" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="University" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contingent" Type="Int32" />
+          <Property Name="StartTime" Type="DateTime" Precision="3" />
+          <Property Name="FinishTime" Type="DateTime" Precision="3" />
+          <Property Name="Definition" Type="String" MaxLength="3000" FixedLength="true" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Media">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DealerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Permissions">
           <Key>
@@ -184,6 +257,25 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
           <Property Name="Code" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Dealer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DealerID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Task" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Definition" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="WebSite" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Students">
           <Key>
@@ -211,37 +303,48 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
           <Property Name="Document" Type="Boolean" />
           <Property Name="GKOD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Current">
-          <Key>
-            <PropertyRef Name="ID"  />
-            <PropertyRef Name="DealerID" />
-            <PropertyRef Name="StudentID" />
-            <PropertyRef Name="Type" />
-            <PropertyRef Name="CreateDate" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DealerID" Type="Int32" Nullable="false" />
-          <Property Name="StudentID" Type="Int32" Nullable="false" />
-          <Property Name="Type" Type="Int32" Nullable="false" />
-          <Property Name="Class" Type="Int32" />
-          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Quantity" Type="Int32" />
-          <Property Name="Status" Type="Boolean" />
-          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityContainer Name="KariyerPoliklinikDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="KariyerPoliklinikDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Comment" EntityType="Self.Comment" />
+          <EntitySet Name="Current" EntityType="Self.Current" />
           <EntitySet Name="Dealers" EntityType="Self.Dealers" />
           <EntitySet Name="Educations" EntityType="Self.Educations" />
+          <EntitySet Name="Media" EntityType="Self.Media" />
           <EntitySet Name="Permissions" EntityType="Self.Permissions" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" />
+          <EntitySet Name="Reference" EntityType="Self.Reference" />
           <EntitySet Name="Students" EntityType="Self.Students" />
-          <EntitySet Name="Current" EntityType="Self.Current" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="KariyerPoliklinikDBModelStoreContainer" CdmEntityContainer="KariyerPoliklinikDBEntities">
+        <EntityContainerMapping StorageEntityContainer="KariyerPoliklinikDBModelStoreContainer" CdmEntityContainer="KariyerPoliklinikDBEntities1">
+          <EntitySetMapping Name="Comment">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+                <ScalarProperty Name="StudenID" ColumnName="StudenID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Current">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Current">
+              <MappingFragment StoreEntitySet="Current">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Dealers">
             <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Dealers">
               <MappingFragment StoreEntitySet="Dealers">
@@ -282,11 +385,26 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
             <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Educations">
               <MappingFragment StoreEntitySet="Educations">
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="University" ColumnName="University" />
+                <ScalarProperty Name="Contingent" ColumnName="Contingent" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="FinishTime" ColumnName="FinishTime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Media">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Media">
+              <MappingFragment StoreEntitySet="Media">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -297,6 +415,27 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personel">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Personel">
+              <MappingFragment StoreEntitySet="Personel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reference">
+            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Reference">
+              <MappingFragment StoreEntitySet="Reference">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -324,21 +463,6 @@ warning 6002: The table/view 'KariyerPoliklinikDB.dbo.Current' does not have a p
                 <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
                 <ScalarProperty Name="Document" ColumnName="Document" />
                 <ScalarProperty Name="GKOD" ColumnName="GKOD" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Current">
-            <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Current">
-              <MappingFragment StoreEntitySet="Current">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
-                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

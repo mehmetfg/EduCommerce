@@ -1,0 +1,25 @@
+﻿@model IEnumerable<EduCommerce.Web.Comment>
+
+@foreach (var item in Model)
+
+{
+    <div class="col-xs-12 col-sm-6 col-md-6 mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="pricing table-horizontal maxwidth400">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="thumb">
+                        <img class="img-fullwidth mb-sm-0" src="/Content/files/ayarlar/yorumprofilfoto/as7.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 p-30 pl-sm-50">
+                    <h4 class="mt-0 mb-5"><a href="#" class="text-white"><span>@item.StudenID</span></a></h4>
+                    <ul class="list-inline mb-5 text-white">
+                        <li class="pr-0"><i class="fa fa-calendar mr-5"></i> 18 / 05 /2017 |</li>
+                        <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>Gaziantep</li>
+                    </ul>
+                    <p class="mb-15 mt-15 text-white">@item.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}

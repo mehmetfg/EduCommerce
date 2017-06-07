@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EduCommerce.Web.Dealers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-content bg-lighter">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="/Content/files/ayarlar/3.jpg">
+        <div class="container pt-70 pb-20">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title text-white text-center">Bayilerimiz</h2>
+                        <ol class="breadcrumb text-left text-black mt-10">
+                            <li><a href="#">Anasayfa</a></li>
+                            <li><a href="#">Kurumsal</a></li>
+                            <li class="active text-gray-silver">Bayilerimiz</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Course gird -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 blog-pull-right">
+
+                    <div class="row">
+                       
+           @foreach (var item in Model)
+           {
+
+
+
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="icon-box iconbox-border p-30 iconbox-theme-colored">
+                                        <h5 class="icon-box-title">Bayi Adı: @item.DealerName</h5>
+                                        <p class="text-gray separator left">Telefon:@item.DealerPhone</p>
+                                        <p class="text-gray separator left">Fax:@item.DealerFax </p>
+                                        <p class="text-gray separator left">Web Site:@item.WebSite</p>
+                                        <p class="text-gray separator left">Mail:@item.DealerMail</p>
+                                        <p class="text-gray separator left">Adres:@item.DealerAddress</p>
+                                    </div>
+                                </div>
+
+
+
+           }      
+                        
+                        
+                    </div>
+
+                </div>
+                @{ Html.RenderPartial("Inc_Left");}
+            </div>
+        </div>
+    </section>
+</div>
+
+
+

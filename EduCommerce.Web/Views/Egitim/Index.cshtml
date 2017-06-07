@@ -1,0 +1,243 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-content">
+
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="/Content/files/ayarlar/bg3.jpg">
+        <div class="container pt-70 pb-20">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title text-white text-center">Egitim Detayları</h2>
+                        <ol class="breadcrumb text-left text-black mt-10">
+                            <li><a href="#">AnaSayfa</a></li>
+                            <li><a href="#">Sayfalar</a></li>
+                            <li class="active text-gray-silver">Sayfa Başlığı</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="product">
+                        <div class="col-md-5">
+                            <div class="product-image">
+                                <div class="zoom-gallery">
+                                    <a href="#" title="Title Here 1"><img src="files/egitimler/egitimdetay/egitim.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="product-summary">
+                                <h2 class="product-title">Egitim Adı</h2>
+                                <div class="product_review">
+                                    <ul class="review_text list-inline">
+                                        <li>
+                                            <div title="Rated 4.50 out of 5" class="star-rating"><span style="width: 70%;">4.50</span></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="price"> <del><span class="amount">165.00TL</span></del> <ins><span class="amount">145.00TL</span></ins> </div>
+                                <div class="short-description">
+                                    <p>Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere mollis nulla ut consectetur.</p>
+                                </div>
+                                <div class="tags"><strong>Eğitim Adı:</strong> EA34</div>
+                                <div class="category"><strong>Kategori:</strong> <a href="#">Book</a>, <a href="#">Note Book</a></div>
+                                <div class="tags"><strong>Etiketler:</strong> <a href="#">Bag</a>, <a href="#">Ladies Bag</a></div>
+                                <div class="cart-form-wrapper mt-30">
+                                    <form enctype="multipart/form-data" method="post" class="cart">
+                                        <input type="hidden" value="productID" name="add-to-cart">
+                                        <table class="table variations no-border">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="name">Tutar</td>
+                                                    <td class="value">
+                                                        <div class="quantity buttons_added">
+                                                            <input type="button" class="minus" value="-">
+                                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                                            <input type="button" class="plus" value="+">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <a class="btn btn-success" href="odeme.html">Satın Al</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="horizontal-tab product-tab">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#tab1" data-toggle="tab">Egitim Açıklaması</a></li>
+                                    <li><a href="#tab2" data-toggle="tab">Ek Bilgiler</a></li>
+                                    <li><a href="#tab3" data-toggle="tab">Taksitler</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="tab1">
+                                        <h3>OYUN TERAPİSİ SERTİFİKASI</h3>
+                                        <p>
+                                            Oyunun ne olduğu yada ne olmadığı konusunda çok eski zamanlardan beri çok değişik görüşler İleri sürülmüştür.
+                                            Bütün bu görüşlerin ortak noktası, oyunun çocuk İçin en önemli uğraş olduğudur. Oyun için yapılan tanımlar şunlardır.
+                                        </p>
+                                        <p>Piaget’e göre oyun bir uyumdur. Oyunlar, çocukların kendi seçtikleri yada gruptaki bazı öğrencilerin seçtikten ve kendilerine göre sağlam kuralları olan eylemlerdir. Çağdaş bir yaklaşımla ise oyun, çocuğun kendi kendini ifade edebildiği, yeteneklerini fark ettiği, yaratıcı potansiyelini kullanabildiği, dil, zihin, sosyal, duygusal ve motor becerilerini geliştirebileceği önemli bir fırsattır.</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab2">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Kayıt Tarihleri:</th>
+                                                    <td><p>Bu Eğitimi Uzaktan Eğitim Teknolojisi ile Online Olarak İstediğiniz Zaman Alabilirsiniz.</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Kontenjan:</th>
+                                                    <td><p>Maksimum 30 kişi ile sınırlıdır.</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Eğitimin Ücreti </th>
+                                                    <td><p>500 TL</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Eğitimin Süresi:</th>
+                                                    <td>65 saat teorik 15 saat uygulama toplam 80 saat</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Alacağınız Belgeler :</th>
+                                                    <td> 1 Adet Selçuk Üniversitesi Onaylı Sertifika</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab3">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <th>A Kredi Kartına:</th>
+                                                    <td><p>3 Taksit</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>B Kredi Kartına:</th>
+                                                    <td><p>6 Taksit</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>C Kredi Kartına:</th>
+                                                    <td><p>7 Taksit</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>D Kredi Kartına:</th>
+                                                    <td><p>8 Taksit</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>E Kredi Kartına:</th>
+                                                    <td><p>9 Taksit</p></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <h3 class="line-bottom">İlgili Eğitimler</h3>
+                        <div class="row multi-row-clearfix">
+                            <div class="products related">
+                                <div class="col-sm-6 col-md-3 col-lg-3 mb-sm-30">
+                                    <div class="product">
+                                        <div class="product-thumb">
+                                            <img alt="" src="http://placehold.it/285x300" class="img-responsive img-fullwidth">
+                                            <div class="overlay">
+                                                <div class="btn-add-to-cart-wrapper">
+                                                    <a class="btn btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="#">Sepete Ekle</a>
+                                                </div>
+                                                <div class="btn-product-view-details">
+                                                    <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="#">Detay</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-details text-center">
+                                            <a href="#"><h5 class="product-title">Eğitim Adı</h5></a>
+                                            <div class="star-rating" title="Rated 3.50 out of 5"><span style="width: 80%;">3.50</span></div>
+                                            <div class="price"><del><span class="amount">165.00 TL</span></del><ins><span class="amount">160.00TL</span></ins></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3 col-lg-3 mb-sm-30">
+                                    <div class="product">
+                                        <div class="product-thumb">
+                                            <img alt="" src="http://placehold.it/285x300" class="img-responsive img-fullwidth">
+                                            <div class="overlay">
+                                                <div class="btn-add-to-cart-wrapper">
+                                                    <a class="btn btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="#">Sepete Ekle</a>
+                                                </div>
+                                                <div class="btn-product-view-details">
+                                                    <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="#">Detay</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-details text-center">
+                                            <a href="#"><h5 class="product-title">Eğitim Adı B</h5></a>
+                                            <div class="star-rating" title="Rated 3.50 out of 5"><span style="width: 32%;">3.50</span></div>
+                                            <div class="price"><del><span class="amount">120.00 TL</span></del><ins><span class="amount">110.00TL</span></ins></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3 col-lg-3 mb-sm-30">
+                                    <div class="product">
+                                        <div class="product-thumb">
+                                            <img alt="" src="http://placehold.it/285x300" class="img-responsive img-fullwidth">
+                                            <div class="overlay">
+                                                <div class="btn-add-to-cart-wrapper">
+                                                    <a class="btn btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="#">Sepete Ekle</a>
+                                                </div>
+                                                <div class="btn-product-view-details">
+                                                    <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="#">Detay</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-details text-center">
+                                            <a href="#"><h5 class="product-title">Eğitim Adı C</h5></a>
+                                            <div class="star-rating" title="Rated 3.50 out of 5"><span style="width: 85%;">3.50</span></div>
+                                            <div class="price"><ins><span class="amount">240.00TL</span></ins></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md3 col-lg-3">
+                                    <div class="product">
+                                        <div class="product-thumb">
+                                            <img alt="" src="http://placehold.it/285x300" class="img-responsive img-fullwidth">
+                                            <div class="overlay">
+                                                <div class="btn-add-to-cart-wrapper">
+                                                    <a class="btn btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="#">Sepete Ekle</a>
+                                                </div>
+                                                <div class="btn-product-view-details">
+                                                    <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="#">Detay</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-details text-center">
+                                            <a href="#"><h5 class="product-title">Eğitim Adı D</h5></a>
+                                            <div class="star-rating" title="Rated 3.50 out of 5"><span style="width: 56%;">3.50</span></div>
+                                            <div class="price"><ins><span class="amount">480.00TL</span></ins></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

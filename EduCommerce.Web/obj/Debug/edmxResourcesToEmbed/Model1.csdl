@@ -1,5 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="KariyerPoliklinikDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DealerID" Type="Int32" />
+    <Property Name="StudenID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Current">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DealerID" Type="Int32" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="Class" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
   <EntityType Name="Dealers">
     <Key>
       <PropertyRef Name="ID" />
@@ -40,11 +63,25 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryID" Type="Int32" />
     <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="University" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contingent" Type="Int32" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="FinishTime" Type="DateTime" Precision="3" />
+    <Property Name="Definition" Type="String" MaxLength="3000" FixedLength="true" Unicode="true" />
+    <Property Name="Picture" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Media">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DealerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Permissions">
     <Key>
@@ -54,6 +91,25 @@
     <Property Name="Code" Type="Int32" />
     <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Dealer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DealerID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Task" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Definition" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Reference">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="WebSite" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="Students">
     <Key>
@@ -81,29 +137,15 @@
     <Property Name="Document" Type="Boolean" />
     <Property Name="GKOD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Current">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="DealerID" />
-      <PropertyRef Name="StudentID" />
-      <PropertyRef Name="Type" />
-      <PropertyRef Name="CreateDate" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DealerID" Type="Int32" Nullable="false" />
-    <Property Name="StudentID" Type="Int32" Nullable="false" />
-    <Property Name="Type" Type="Int32" Nullable="false" />
-    <Property Name="Class" Type="Int32" />
-    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Quantity" Type="Int32" />
-    <Property Name="Status" Type="Boolean" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityContainer Name="KariyerPoliklinikDBEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="KariyerPoliklinikDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comment" EntityType="Self.Comment" />
+    <EntitySet Name="Current" EntityType="Self.Current" />
     <EntitySet Name="Dealers" EntityType="Self.Dealers" />
     <EntitySet Name="Educations" EntityType="Self.Educations" />
+    <EntitySet Name="Media" EntityType="Self.Media" />
     <EntitySet Name="Permissions" EntityType="Self.Permissions" />
+    <EntitySet Name="Personel" EntityType="Self.Personel" />
+    <EntitySet Name="Reference" EntityType="Self.Reference" />
     <EntitySet Name="Students" EntityType="Self.Students" />
-    <EntitySet Name="Current" EntityType="Self.Current" />
   </EntityContainer>
 </Schema>

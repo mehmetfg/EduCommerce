@@ -1,0 +1,133 @@
+﻿<!-- Footer -->
+<footer id="footer" class="footer divider parallax layer-overlay overlay-dark-9" data-bg-img="files/ayarlar/footer-bg" data-parallax-ratio="0.7">
+    <div class="container pt-70 pb-30">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="widget dark">
+                    <h5 class="widget-title line-bottom">Sertifika Sorgula</h5>
+
+                    <p class="font-16 text-white mb-5 mt-15">Lütfen Sertifika Numarasını Giriniz..</p>
+                    <form id="footer-mailchimp-subscription-form" class="newsletter-form mt-10">
+                        <label class="display-block" for="mce-EMAIL"></label>
+                        <div class="input-group">
+                            <input type="email" value="" name="EMAIL" placeholder="Sertifika No" class="form-control" data-height="50px" id="mce-EMAIL">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-colored btn-theme-colored m-0"><i class="fa fa-paper-plane-o text-white"></i></button>
+                            </span>
+                        </div>
+                    </form>
+
+                    <!-- Mailchimp Subscription Form Validation-->
+                    <script type="text/javascript">
+              $('#footer-mailchimp-subscription-form').ajaxChimp({
+                  callback: mailChimpCallBack,
+                  url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
+              });
+
+              function mailChimpCallBack(resp) {
+                  // Hide any previous response text
+                  var $mailchimpform = $('#footer-mailchimp-subscription-form'),
+                      $response = '';
+                  $mailchimpform.children(".alert").remove();
+                  if (resp.result === 'success') {
+                      $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                  } else if (resp.result === 'error') {
+                      $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                  }
+                  $mailchimpform.prepend($response);
+              }
+                    </script>
+                </div>
+            </div>
+
+            @{ Html.RenderAction("GetBayiFooter", "Default");}
+            <div class="col-sm-6 col-md-4">
+                <div class="widget dark">
+                    <h4 class="widget-title line-bottom">Mesaj Gönder</h4>
+                    <form id="quick_contact_form2" name="footer_quick_contact_form" class="quick-contact-form" action="includes/quickcontact.php" method="post">
+                        <div class="form-group">
+                            <input name="form_email" class="form-control" type="text" required="" placeholder="E-Posta">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="form_message" class="form-control" required="" placeholder="Mesajınız" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                            <button type="submit" class="btn btn-default btn-flat btn-xs btn-transparent text-gray pt-5 pb-5" data-loading-text="Please wait...">Gönder</button>
+                        </div>
+                    </form>
+
+                    <!-- Quick Contact Form Validation-->
+                    <script type="text/javascript">
+              $("#quick_contact_form2").validate({
+                submitHandler: function(form) {
+                  var form_btn = $(form).find('button[type="submit"]');
+                  var form_result_div = '#form-result';
+                  $(form_result_div).remove();
+                  form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                  var form_btn_old_msg = form_btn.html();
+                  form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                  $(form).ajaxSubmit({
+                    dataType:  'json',
+                    success: function(data) {
+                      if( data.status == 'true' ) {
+                        $(form).find('.form-control').val('');
+                      }
+                      form_btn.prop('disabled', false).html(form_btn_old_msg);
+                      $(form_result_div).html(data.message).fadeIn('slow');
+                      setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                    }
+                  });
+                }
+              });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom bg-black-333">
+        <div class="container pt-10 pb-0">
+            <div class="row">
+                <div class="col-md-6 sm-text-center">
+                    <p class="font-13 text-black-777 m-0">Copyright &copy;2017 OnlineSoft. All Rights Reserved</p>
+                </div>
+                <div class="col-md-6 text-right flip sm-text-center">
+                    <div class="widget no-border m-0">
+                        <ul class="styled-icons icon-dark icon-circled icon-sm">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- end wrapper -->
+<!-- Footer Scripts -->
+<!-- JS | Custom script for all pages -->
+<!-- Footer Scripts -->
+<!-- JS | Custom script for all pages -->
+<script src="~/Content/js/custom.js"></script>
+
+
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS
+      (Load Extensions only on Local File Systems !
+       The following part can be removed on Server for On Demand Loading) -->
+<script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+<script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+</body>
+</html>

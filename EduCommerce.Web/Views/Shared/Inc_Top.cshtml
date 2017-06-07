@@ -1,0 +1,154 @@
+﻿
+<div id="side-panel" class="dark bg-img-cover layer-overlay overlay-white-8" data-bg-img="files/ayarlar/leftpanel.png">
+    <div class="side-panel-wrap">
+        <div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="pe-7s-close font-26"></i></a></div>
+        <a href="javascript:void(0)"><img src="~/Areas/Web/Content/images/logo-wide.png" alt=""></a>
+        <div class="text-center">
+            <h5>Eğitim Formu </h5>
+        </div>
+        <div class="row">
+            <h6> Kişisel Bilgileriniz </h6>
+            <form id="appointment_form" name="appointment_form" class="mt-10" method="post" action="#">
+                <div class="form-group ">
+                    <input name="form_name" class="form-control" type="texts" required="" placeholder="Ad Soyad" aria-required="true">
+                </div>
+                <div class="form-group ">
+                    <input name="form_phone" class="form-control required" type="texts" required="" placeholder="Telefon" aria-required="true">
+
+                </div>
+                <div class="form-group ">
+                    <input name="form_email" class="form-control required email" type="email" placeholder="E-posta" aria-required="true">
+                </div>
+                <h6> Eğitim Durumunuz </h6>
+                <p> Mezuniyetinizi Seçiniz</p>
+                <div class="checkbox">
+                    <label>
+                        <input value="" type="checkbox">
+                        Lisans
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input value="" type="checkbox">
+                        Yüksek Lisans
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input value="" type="checkbox">
+                        Diğer
+                    </label>
+                </div>
+                <div class="form-group ">
+                    <input name="form_name" class="form-control" type="texts" required="" placeholder="Lütfen Bölümünüzü Giriniz.." aria-required="true">
+                </div>
+                <h6>Talep Ettiğiniz Eğitim Seçiniz..</h6>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option>İstediğiniz Eğitimi Seçiniz</option>
+                        <option>Eğitim A</option>
+                        <option>Eğitim B</option>
+                        <option>Eğitim C</option>
+                    </select>
+                </div>
+                <div class="form-group mb-0 mt-10">
+                    <input name="form_botcheck" class="form-control" type="hidden" value="">
+                    <button type="submit" class="btn btn-default btn-sm" data-loading-text="Lütfen Bekleyiniz...">Gönder</button>
+                </div>
+            </form>
+            <script type="text/javascript">
+              $("#quick_contact_form2").validate({
+                submitHandler: function(form) {
+                  var form_btn = $(form).find('button[type="submit"]');
+                  var form_result_div = '#form-result';
+                  $(form_result_div).remove();
+                  form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                  var form_btn_old_msg = form_btn.html();
+                  form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                  $(form).ajaxSubmit({
+                    dataType:  'json',
+                    success: function(data) {
+                      if( data.status == 'true' ) {
+                        $(form).find('.form-control').val('');
+                      }
+                      form_btn.prop('disabled', false).html(form_btn_old_msg);
+                      $(form_result_div).html(data.message).fadeIn('slow');
+                      setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                    }
+                  });
+                }
+              });
+            </script>
+        </div>
+        <div class="clearfix"></div>
+        
+    @{ Html.RenderAction("GetBayiTop", "Default");}
+    
+ 
+                    <ul class="menuzord-menu">
+                        <li class="active"><a href="/">Anasayfa</a>
+                        <li>
+                            <a href="#">Kurumsal</a>
+                            <ul class="dropdown">
+                                <li><a href="kurumsal_sirket_tarihi.html">Şirket Tarihi</a></li>
+                                <li><a href="egitim_kadromuz.html">Eğitim Kadromuz</a></li>
+                                <li><a href="referanslar.html">Referanslar</a></li>
+                                <li><a href="insan_kaynaklari_formu.html">İnsan Kaynakları</a></li>
+                                <li><a href="#">Anketimize Katılın</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Eğitimler</a>
+                            <ul class="dropdown">
+                                <li>
+                                    <a href="#">Bireysel Eğitimler</a>
+                                    <ul class="dropdown">
+                                        <li><a href="egitim-detay.html"> Bireysel Eğitimler 1</a></li>
+                                        <li><a href="egitim-detay.html"> Bireysel Eğitimler 2</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Yüksek Lisans Eğitimleri</a>
+                                    <ul class="dropdown">
+                                        <li><a href="egitim-detay.html">Ses ve Konuşma Terapisi Yüksek Lisans</a></li>
+                                        <li><a href="egitim-detay.html">Yüksek Lisans Eğitimleri 2</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Kurumsal Eğitimler</a>
+                                    <ul class="dropdown">
+                                        <li><a href="egitim-detay.html">Kurumsal Eğitimler 1</a></li>
+                                        <li><a href="egitim-detay.html">Kurumsal Eğitimler 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Bayilik</a>
+                            <ul class="dropdown">
+                                <li><a href="bayilerimiz.html">Bayilerimiz</a></li>
+                                <li><a href="bayilik_basvuru_formu.html">Bayilik Başvurusu</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Galeriler</a>
+                            <ul class="dropdown">
+                                <li><a href="foto_galeri.html">Foto Galeri</a></li>
+                                <li><a href="video_galeri.html">Video Galeri</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                            <ul class="dropdown">
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="iletisim.html">İletişim</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

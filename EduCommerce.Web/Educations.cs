@@ -15,10 +15,15 @@ namespace EduCommerce.Web
     public partial class Educations
     {
         public int ID { get; set; }
-        public string Category { get; set; }
+        public Nullable<int> CategoryID { get; set; }
         public string Name { get; set; }
         public string Price { get; set; }
         public string Time { get; set; }
         public string University { get; set; }
+        public Nullable<int> Contingent { get; set; }
+        public Nullable<System.DateTime> StartTime { get; set; }
+        public Nullable<System.DateTime> FinishTime { get; set; }
+        public string Definition { get; set; }
+        public string Picture { get; set; }
     }
 }

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<EduCommerce.Web.Media>
+ @foreach(var item in Model)
+ {
+
+
+<div class="item">
+    <div class="work-gallery">
+        <div class="gallery-thumb">
+            <img class="img-fullwidth" alt="" src="@item.Image">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-contect">
+                <ul class="styled-icons icon-bordered icon-circled icon-sm">
+                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                    <li><a data-rel="prettyPhoto" href="@item.Image"><i class="fa fa-arrows"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="gallery-bottom-part text-center">
+            <h4 class="title text-uppercase font-opensans font-weight-600 m-0">@item.DealerID</h4>
+        </div>
+    </div>
+</div>
+ }

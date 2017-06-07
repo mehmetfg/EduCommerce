@@ -1,6 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="KariyerPoliklinikDBModelStoreContainer" CdmEntityContainer="KariyerPoliklinikDBEntities">
+  <EntityContainerMapping StorageEntityContainer="KariyerPoliklinikDBModelStoreContainer" CdmEntityContainer="KariyerPoliklinikDBEntities1">
+    <EntitySetMapping Name="Comment">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+          <ScalarProperty Name="StudenID" ColumnName="StudenID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Current">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Current">
+        <MappingFragment StoreEntitySet="Current">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Dealers">
       <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Dealers">
         <MappingFragment StoreEntitySet="Dealers">
@@ -41,11 +66,26 @@
       <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Educations">
         <MappingFragment StoreEntitySet="Educations">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Time" ColumnName="Time" />
           <ScalarProperty Name="University" ColumnName="University" />
+          <ScalarProperty Name="Contingent" ColumnName="Contingent" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="FinishTime" ColumnName="FinishTime" />
+          <ScalarProperty Name="Definition" ColumnName="Definition" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Media">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Media">
+        <MappingFragment StoreEntitySet="Media">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -56,6 +96,27 @@
           <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personel">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Personel">
+        <MappingFragment StoreEntitySet="Personel">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Task" ColumnName="Task" />
+          <ScalarProperty Name="Definition" ColumnName="Definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reference">
+      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Reference">
+        <MappingFragment StoreEntitySet="Reference">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -83,21 +144,6 @@
           <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
           <ScalarProperty Name="Document" ColumnName="Document" />
           <ScalarProperty Name="GKOD" ColumnName="GKOD" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Current">
-      <EntityTypeMapping TypeName="KariyerPoliklinikDBModel.Current">
-        <MappingFragment StoreEntitySet="Current">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="DealerID" ColumnName="DealerID" />
-          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Class" ColumnName="Class" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

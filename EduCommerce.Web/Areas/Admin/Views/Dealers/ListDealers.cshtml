@@ -1,0 +1,135 @@
+﻿@model IEnumerable<EduCommerce.Web.Dealers>
+
+@{
+    ViewBag.Title = "ListDealers";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="panel panel-primary panel-body">
+        <h2>Bayiler</h2>
+        <hr />
+        <p>
+            <h3>@Html.ActionLink("Yeni Ekle", "Yeni", null, new { @class = " btn btn-primary " })</h3>
+        </p>
+        <table class="table table-striped responsive-utilities jambo_table">
+            <tr>
+
+                <th class="btn-danger">
+                    Bayi Tipi
+                </th>
+                <th class="btn-danger">
+                    Bayi Adı
+                </th>
+
+
+                <th class="btn-danger">
+                    Telefon
+                </th>
+                <th class="btn-danger">
+                    Fax
+                </th>
+                <th class="btn-danger">
+                    Mail
+                </th>
+                <th class="btn-danger">
+                    Adres
+                </th>
+                <th class="btn-danger">
+                    IBAN
+                </th>
+                <th class="btn-danger">
+                    Banka Adı
+                </th>
+                <th class="btn-danger">
+                    Hesap Adı
+                </th>
+                <th class="btn-danger">
+                    Vergi Numarası
+                </th>
+                <th class="btn-danger">
+                    Ülke
+                </th>
+                <th class="btn-danger">
+                    Şehir
+                </th>
+                <th class="btn-danger">
+                    Dil
+                </th>
+
+
+
+                <th class="btn-danger">
+                    Bayi Resim
+                </th>
+                <th class="btn-danger">
+                    Durum
+                </th>
+
+                <th class="btn-danger"></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerName)
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerFax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerMail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IBAN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BankName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AccountName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TaxNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CountryID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CityID)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerLoginIP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DealerPicture)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+
+                    <td class="text-nowrap">
+                        @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID }, new { @class = " btn btn-info btn-xs " }) |
+                        @Html.ActionLink("Detay", "Detay", new { id = item.ID }, new { @class = " btn btn-primary btn-xs" }) |
+                        @Html.ActionLink("Sil", "Sil", new { id = item.ID }, new { @class = " btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
